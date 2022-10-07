@@ -45,7 +45,7 @@ export default function CustomButton(label) {
           fontSize: 16,
           color: '#fff',
         }}>
-        Login
+        Register
       </Text>
     </TouchableOpacity>
   )

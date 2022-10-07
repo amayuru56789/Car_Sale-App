@@ -147,7 +147,7 @@ const style = StyleSheet.create({
     backgroundColor: '#ddd',
     borderWidth: 2,
     borderRadius: 10,
-    width:50,
-    height:50
+    width:30,
+    height:30
   }
 });

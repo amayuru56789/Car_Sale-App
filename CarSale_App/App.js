@@ -13,6 +13,7 @@ import AvcLogin from './screens/avcLogin'
 import LoginScreen from './screens/Lo'
 import CustomButton from './component/CustomButton'
 import SocialIcon from './component/SocialIcon'
+import Register from './screens/RegisterScreen'
 
 export default function App() {
   return (
@@ -22,9 +23,10 @@ export default function App() {
     //   <InputField/>
     
     // </View>
-    <Login/>
+     <Login/>
     // <AvcLogin/>
     // <LoginScreen/>
     //<SocialIcon/>
+    //<Register/>
   )
 }

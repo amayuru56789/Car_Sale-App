@@ -11,24 +11,24 @@ export default function InputField(label, icon, inputType, keyboardType, fieldBu
         paddingBottom: 8,
         marginBottom: 25,
       }}>
-      {icon}
+      {/* {icon} */}
       {inputType == 'password' ? (
         <TextInput
-          placeholder={label}
-          keyboardType={keyboardType}
+          placeholder='Password'
+          // keyboardType={keyboardType}
           style={{flex: 1, paddingVertical: 0}}
           secureTextEntry={true}
         />
       ) : (
         <TextInput
-          placeholder={label}
-          keyboardType={keyboardType}
+          placeholder='Email ID'
+          // keyboardType={keyboardType}
           style={{flex: 1, paddingVertical: 0}}
         />
       )}
-      {/* <TouchableOpacity onPress={fieldButtonFunction}>
+      <TouchableOpacity onPress={fieldButtonFunction}>
         <Text style={{color: '#AD40AF', fontWeight: '700'}}>{fieldButtonLabel}</Text>
-      </TouchableOpacity> */}
+      </TouchableOpacity>
     </View>
   )
 }
