@@ -23,10 +23,10 @@ export default function App() {
     //   <InputField/>
     
     // </View>
-     <Login/>
+    // <Login/>
     // <AvcLogin/>
     // <LoginScreen/>
     //<SocialIcon/>
-    //<Register/>
+    <Register/>
   )
 }
