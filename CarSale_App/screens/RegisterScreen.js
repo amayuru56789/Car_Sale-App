@@ -1,5 +1,5 @@
 import InputField from '../component/InputField';
-import { View, Text, StyleSheet, Input, SafeAreaView, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, Input, SafeAreaView, Image, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native'
 import React, { useState } from 'react'
 import CustomButton from '../component/CustomButton';
 import SocialIcon from '../component/SocialIcon'
@@ -14,7 +14,22 @@ const[password,setPassword]=useState('');
 const[conPassword,setConPassword]=useState('');
 
 const saveData = ()=> {
-  console.log(name+" "+password+" "+conPassword);
+  //console.log(name+" "+password+" "+conPassword);
+
+  fetch('https://localhost:4000/user', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                password: password,
+                conPassword: conPassword
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => {Alert.alert("User Registered Successfully !")})
+            .catch((err)=>{Alert.alert("Error occured !")})
 }
 
   return (
@@ -50,9 +65,21 @@ const saveData = ()=> {
           <TextInput placeholder='Full Name' onChangeText={(e)=> {setName(e)}} style={{flex: 1, paddingVertical: 0}}/>
       </View>
 
-        <InputField
+      <View
+        style={{
+          flexDirection: 'row',
+          borderBottomColor: '#ccc',
+          borderBottomWidth: 1,
+          paddingBottom: 8,
+          marginBottom: 25,
+        }}
+      >
+          <TextInput placeholder='Email' onChangeText={(e)=> {setEmail(e)}} style={{flex: 1, paddingVertical: 0}}/>
+      </View>
+
+        {/* <InputField
             // label={'Full Name'}
-        />
+        /> */}
 
       <View
         style={{

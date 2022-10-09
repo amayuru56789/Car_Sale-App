@@ -3,16 +3,32 @@ const app = express()
 const router = express.Router()
 app.use(express.json());
 
+const User = require('../models/user_models')
+
 router.get('/', (req, res) => {
-    res.send('user get')
+    res.send('user get');
 });
 
-router.post('/', (req, res) => {
-    res.send('user post method')
+router.post('/', async (req, res) => {
+    //res.send('user post method');
+    const user = new User({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        conPassword: req.body.conPassword
+    });
+console.log(user.name);
+    try{
+        const response = user.save();
+        res.json(response);
+        // res.send(response);
+    }catch (err) {
+        res.send('Err: ' + err);
+    }
 });
 
 router.delete('/', (req, res) => {
-    res.send(req.query.id)
+    res.send(req.query.id);
 });
 
 module.exports = router

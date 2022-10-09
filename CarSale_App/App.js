@@ -14,6 +14,13 @@ import LoginScreen from './screens/Lo'
 import CustomButton from './component/CustomButton'
 import SocialIcon from './component/SocialIcon'
 import Register from './screens/RegisterScreen'
+import AddVehicleScreen from './screens/AddVehicleScreen'
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Inputs from './component/Inputs'
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
@@ -27,6 +34,15 @@ export default function App() {
     // <AvcLogin/>
     // <LoginScreen/>
     //<SocialIcon/>
-    <Register/>
+    //<Register/>
+    //<AddVehicleScreen/>
+    <NavigationContainer>
+      <Stack.Navigator>
+      {/* <Stack.Screen name="Home" component={Home} /> */}
+      <Stack.Screen name="Inputs" component={Inputs} />
+      <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="AddVehicleScreen" component={AddVehicleScreen} />
+    </Stack.Navigator>
+    </NavigationContainer>
   )
 }

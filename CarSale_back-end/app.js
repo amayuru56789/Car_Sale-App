@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 const port = 4000;
 
-const url = 'mongodb://127.0.0.1/express'
+const url = 'mongodb://127.0.0.1/carSale'
 
 mongoose.connect(url, { useNewUrlParser: true });
 const con = mongoose.connection;

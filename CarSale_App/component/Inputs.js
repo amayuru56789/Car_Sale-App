@@ -11,7 +11,7 @@ import InputField from './InputField';
 //     this.setState({isFocused: true})
 // }
 
-export default function Inputs() {
+export default function Inputs({navigation}) {
   return (
     // <View style={[style.container, {borderColor: this.stateisFocused ?
     // '#0779ef':'#eee'}]}>
@@ -71,7 +71,7 @@ export default function Inputs() {
           </TouchableOpacity>
       </View>
 
-      <TouchableOpacity onPress={()=> {}} 
+      <TouchableOpacity onPress={()=> {navigation.navigate("AddVehicleScreen")}} 
       style={{
         backgroundColor: '#AD40AF',
         padding: 20,
