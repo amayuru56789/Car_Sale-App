@@ -30,7 +30,7 @@ import React from 'react'
 export default function CustomButton(label) {
   return (
     <TouchableOpacity
-    onPress={() => {}}
+    onPress={(saveData) => {}}
       style={{
         backgroundColor: '#AD40AF',
         padding: 20,

@@ -1,12 +1,22 @@
 import InputField from '../component/InputField';
 import { View, Text, StyleSheet, Input, SafeAreaView, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import CustomButton from '../component/CustomButton';
 import SocialIcon from '../component/SocialIcon'
 //import { ScrollView } from 'native-base';
 // import InputField from '../component/InputField';
 
 export default function Register() {
+
+const[name,setName]=useState('');
+const[email,setEmail]=useState('');
+const[password,setPassword]=useState('');
+const[conPassword,setConPassword]=useState('');
+
+const saveData = ()=> {
+  console.log(name+" "+password+" "+conPassword);
+}
+
   return (
 
     <SafeAreaView style={{flex: 1, justifyContent:'center'}}>
@@ -37,7 +47,7 @@ export default function Register() {
           marginBottom: 25,
         }}
       >
-          <TextInput placeholder='Full Name' style={{flex: 1, paddingVertical: 0}}/>
+          <TextInput placeholder='Full Name' onChangeText={(e)=> {setName(e)}} style={{flex: 1, paddingVertical: 0}}/>
       </View>
 
         <InputField
@@ -53,7 +63,7 @@ export default function Register() {
           marginBottom: 25,
         }}
       >
-          <TextInput placeholder='Password' style={{flex: 1, paddingVertical: 0}} secureTextEntry={true} />
+          <TextInput placeholder='Password' onChangeText={(e)=> {setPassword(e)}} style={{flex: 1, paddingVertical: 0}} secureTextEntry={true} />
           {/* <TouchableOpacity onPress={()=> {}}>
             <Text style={{color:'#AD40AF', fontWeight:'700'}}>Forgot?</Text>
           </TouchableOpacity> */}
@@ -68,10 +78,10 @@ export default function Register() {
           marginBottom: 25,
         }}
       >
-          <TextInput placeholder='Confirm Password' style={{flex: 1, paddingVertical: 0}} secureTextEntry={true} />
+          <TextInput placeholder='Confirm Password' onChangeText={(e)=> {setConPassword(e)}} style={{flex: 1, paddingVertical: 0}} secureTextEntry={true} />
       </View>
       
-      {/* <TouchableOpacity onPress={()=> {}} 
+      <TouchableOpacity onPress={saveData} 
       style={{
         backgroundColor: '#AD40AF',
         padding: 20,
@@ -79,10 +89,10 @@ export default function Register() {
         marginBottom: 30,
       }}>
         <Text style={{ textAlign: 'center', fontWeight: '700', fontSize: 16, color: '#fff', }}>
-          Login
+          Register
         </Text>
-      </TouchableOpacity> */}
-      <CustomButton/>
+      </TouchableOpacity>
+      {/* <CustomButton/> */}
 
       {/* <View style={style.social_container}>
       <TouchableOpacity
